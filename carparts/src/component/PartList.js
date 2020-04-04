@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import {storeParts} from '../data';
 import Part from './Part';
 import {PartConsumer} from '../context';
 
 export default class PartList extends Component {
-    state={
-        parts: storeParts
-    };
+  
     /**
      * <PartConsumer>
      * works as a state and allows
         you to pass down from index.js
      */
     render() {
-    
         return (
             <React.Fragment>
                 <div className="py-5">
@@ -24,7 +20,7 @@ export default class PartList extends Component {
                             <PartConsumer>
                               {(value)=>{
                             return value.parts.map(part => {
-                                return <Part key={part.id} part={part}/>;
+                                return <Part key={part.id} part={part} />;
                             })
                               }}  
                             </PartConsumer>
@@ -32,7 +28,6 @@ export default class PartList extends Component {
                     </div>
                 </div>
             </React.Fragment>
-            //    <Part/>
         );
     }
 }
