@@ -1,26 +1,42 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import ToolBar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { IconButton } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import {ButtonContainer} from './Button';
 
- const NavBar = () =>{
-     return(
-         <div>
-             <AppBar position="static">
-                 <ToolBar>
-                     <Menu/>
-                     <IconButton edge="start" color="inherit" aria-label="menu">
-                     <Typography variant="title" color="inherit" align="center">
-                         Car Parts Catalog
-                     </Typography>
-                     </IconButton>
-                 </ToolBar>
-             </AppBar>
-         </div>
 
-     )
- }
+export default class NavBar extends Component {
+    render() {
+        return (
+            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+                <Link to='/'>
+                    Home
+                </Link>
+                <ul className="navbar-nav align-items-center">
+                    <li className="nav-item ml-5">
+                        <Link to ="/" className="nav-link">
+                            parts
+                        </Link>
+                    </li>
+                </ul>
+                <Link to='/cart' className="ml-auto">
+                    <ButtonContainer>
+                        <span className="mr-2">
+                         <i className="fas fa-cart-plus"/>
+                        </span>
+                       my cart
+                    </ButtonContainer>
+                </Link>
+            </NavWrapper>
+        )
+    }
+}
 
- export default NavBar; 
+const NavWrapper = styled.nav`
+    background: var(--mainGrey);
+    .nav-link{
+        color: var(--mainWhite)!important;
+        font-size:1.3rem;
+        text-transform: capitalize;
+    }
+
+`;

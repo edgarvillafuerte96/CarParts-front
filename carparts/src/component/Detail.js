@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Part extends Component {
+export default class Detail extends Component {
     render() {
         return (
             <div>
-                <h3> hello from Part</h3>
+                <h3> hello from Detail</h3>
             </div>
         )
     }
