@@ -7,7 +7,7 @@ const PartContext = React.createContext();
 class PartProvider extends Component {
     state = {
      parts: storeParts,
-     detailProduct: detailProduct
+     detailProduct
     };
 
     handleDetail = () => {
