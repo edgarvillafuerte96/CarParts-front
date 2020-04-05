@@ -19,7 +19,7 @@ export default class Part extends Component {
                         </Link>
                         <button className="cart-btn" 
                         disable={inCart ? true : false}
-                        onClick={() => {console.log('added');
+                        onClick={() => {
                         }}
                         >
                         {inCart ? (<p className="text-capitalize mb-0" disabled>
@@ -34,6 +34,8 @@ export default class Part extends Component {
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0"></p>
                         {description}
+                        <p className="align-self-auto mb-0"></p>
+                        {weight}
                         <h5 className="h5 text-blue font-weight-bolder mb-0">
                             <span className="mr-1">$</span>
                             {price}
