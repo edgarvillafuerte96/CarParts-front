@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {storeParts, detailProduct} from './data';
+//import {storeParts, detailProduct} from './data';
+import {storeParts} from './datwa';
 
 
 const PartContext = React.createContext();
@@ -7,7 +8,7 @@ const PartContext = React.createContext();
 class PartProvider extends Component {
     state = {
      parts: storeParts,
-     detailProduct
+     //detailProduct
     };
 
     handleDetail = () => {
